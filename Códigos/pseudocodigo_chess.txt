@@ -1,0 +1,73 @@
+INÍCIO
+	VARIÁVEL INTEIRA linha, coluna, contador
+	ARRAY tabuleiro[1..8,1..8] de caractéres
+	PARA linha DE 1 ATE 8 FACA
+		PARA coluna DE 1 ATE 8 FACA
+			SE linha=1 ENTÃO
+				SE coluna=1 OU coluna=7 ENTÃO
+					tabuleiro[linha,coluna] ← ”R”
+				SENÃO SE coluna=2 OU coluna=7 ENTÃO
+				 	tabuleiro[linha,coluna] ← ”N”
+				SENÃO SE coluna=3 OU coluna=6 ENTÃO
+					tabuleiro[linha,coluna] ← ”B”
+				SENÃO SE coluna=4 ENTÃO
+					tabuleiro[linha,coluna]= ← ”K”
+				SENÃO SE coluna=5 ENTÃO
+					tabuleiro[linha,coluna] ← ”Q”
+FIMSE
+FIMSE
+				FIMSE
+				FIMSE
+				FIMSE
+			SENÃO SE linha=2 ENTÃO
+				tabuleiro[linha,coluna] ← “P“
+			SENÃO SE linha=7 ENTÃO
+				tabuleiro[linha,coluna] ← “p“
+			SENÃO	SE linha=8 ENTÃO
+				SE coluna=1 OU coluna=7 ENTÃO
+					tabuleiro[linha,coluna] ← ”r”
+				SENÃO SE coluna=2 OU coluna=7 ENTÃO
+				 	tabuleiro[linha,coluna] ← ”n”
+				SENÃO SE coluna=3 OU coluna=6 ENTÃO
+					tabuleiro[linha,coluna] ← ”b”
+				SENÃO SE coluna=4 ENTÃO
+					tabuleiro[linha,coluna] ← ”k”
+				SENÃO SE coluna=5 ENTÃO
+					tabuleiro[linha,coluna] ← ”q”
+FIMSE					
+FIMSE
+				FIMSE
+				FIMSE
+				FIMSE
+			SENÃO
+				tabuleiro[linha,coluna] ← “ “
+			FIMSE
+			FIMSE
+			FIMSE
+			FIMSE
+		FIMPARA
+	FIMPARA
+ESCREVA (No tabuleiro de xadrez a seguir, as peças brancas são representadas por letras minúsculas e as peças pretas são representadas por letras maiúsculas.
+Legenda:
+P,p = peão | R,r = Torre | N,n = Cavalo
+B,b = Bispo | Q,q = rainha | K,k = rei)
+ESCREVA      (      |  a  |  b  |  c  |  d  |  e  |  f  |  g  |  h  |)
+PARA contador 	DE 0 ATE 7 FACA
+	ESCREVA (-------)
+FIMPARA
+PARA linha DE 1 ATE 8 FACA
+	PARA coluna DE 1 ATE 8 FACA
+		SE coluna=0
+			ESCREVA   (linha  |  tabuleiro[linha,coluna])
+			SENÃO SE coluna=7
+				ESCREVA (|  tabuleiro[linha,coluna]  |)
+			PARA contador DE 0 ATE 7 FACA
+				ESCREVA   (-------)
+			FIMPARA
+			SENÃO
+				ESCREVA (|  tabuleiro[linha,coluna])  
+		FIMSE
+		FIMSE
+	FIMPARA
+FIMPARA
+FIM	

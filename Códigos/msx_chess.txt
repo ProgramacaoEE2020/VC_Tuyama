@@ -1,0 +1,52 @@
+10 WIDTH 80
+20 DIM T$(8,8)
+30 FOR L=0 TO 7
+40 FOR C=0 TO 7
+50 IF L=0 GOTO 60 ELSE 110
+60 IF C=0 OR C=7 THEN T$(L,C)="R" ELSE 70
+70 IF C=1 OR C=6 THEN T$(L,C)="N" ELSE 80
+80 IF C=2 OR C=5 THEN T$(L,C)="B" ELSE 90
+90 IF C=3 THEN T$(L,C)="K" ELSE 100
+100 IF C=4 THEN T$(L,C)="Q" ELSE 200
+110 IF L=1 THEN T$(L,C)="P" ELSE 120
+120 IF L=6 THEN T$(L,C)="p" ELSE 130
+130 IF L=7 GOTO 140 ELSE 190
+140 IF C=0 OR C=7 THEN T$(L,C)="r" ELSE 150
+150 IF C=1 OR C=6 THEN T$(L,C)="n" ELSE 160
+160 IF C=2 OR C=5 THEN T$(L,C)="b" ELSE 170
+170 IF C=3 THEN T$(L,C)="k" ELSE 180
+180 IF C=4 THEN T$(L,C)="q" ELSE 200
+190 IF L=2 OR L=3 OR L= 4 OR L=5 THEN T$(L,C)=" " ELSE 200
+200 NEXT C
+210 NEXT L
+220 PRINT "No tabuleiro de xadrez a seguir, as pecas brancas sao representadas por letras minusculas e as pecas pretas sao representadas por letras maiusculas."
+230 PRINT "Legenda"
+240 PRINT "P,p - Peao";" | ";
+250 PRINT "R,r - Torre";" | ";
+260 PRINT "N,n - Cavalo"
+270 PRINT "B,b - Bispo";" | ";
+280 PRINT "Q,q - Rainha";" | ";
+290 PRINT "R,r - Rei"
+300 PRINT "       |  a  |  b  |  c  |  d  |  e  |  f  |  g  |  h  |"
+310 FOR I=0 TO 7
+320 PRINT "-------";
+330 NEXT I
+335 PRINT
+340 FOR L=0 TO 7
+350 FOR C=0 TO 7
+360 IF C=0 GOTO 370 ELSE 390
+370 PRINT "  ";L;"  |";
+380 PRINT "  ";T$(L,C);"  ";
+390 IF C=7 GOTO 400 ELSE 450
+400 PRINT "|  ";T$(L,C);"  |"
+410 FOR I=0 TO 7
+420 PRINT "-------";
+430 NEXT I
+440 PRINT
+450 IF C=1 OR C=2 OR C=3 OR C=4 OR C=5 OR C=6 GOTO 460 ELSE 470
+460 PRINT "|  ";T$(L,C);"  ";
+470 NEXT C
+480 NEXT L
+
+
+
